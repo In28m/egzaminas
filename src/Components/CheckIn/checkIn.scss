@@ -1,6 +1,5 @@
 .flex-container {
-    width: 40%;
-    height: 50vh;
+    height: 80vh;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -12,33 +11,67 @@
         color: var(--btnHoverColor);
     }
      input {
+        background: none;
         border: none;
         text-align: center;
-        border-radius: 3px;
-        margin-left: 10px;
         outline: none;
-        background-color: rgba(73, 72, 72, 0.192);
         color: var(--blackColor); 
         &::placeholder {
             text-align: center;
             color: var(--whiteColor);
         } 
      }
-  }
+}
   
-  .flex-container div {
+.flex-container div {
     margin-top: 25px;
     display: flex;
-    align-items: center;
-    display: flex;
-    
-    align-items: center;
     justify-content: center;
-    text-align: center;
+}
+ 
+.flex-container button {
+    margin-left: 15px;
   }
  
-  
-  .flex-container button {
-    margin-left: 10px; // Arba kito dydžio pagal jūsų poreikius
+div ul {
+  margin-top: 25px;
+  list-style-type: none;
+  li {
+    font-weight: bold;
   }
-  
+ 
+}
+
+.inputBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 5px;
+  background-color: rgba(73, 72, 72, 0.192); 
+  svg {
+    color: var(--btnColor);
+  }
+}
+.btnAdd,
+.btnDel {
+  align-items: center;
+  justify-content: center;
+  background: var(--btnColor);
+  border: none;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin: 3px; 
+}
+.btnDel svg {
+  color: var(--svgDel);
+}
+
+.flex-container .btn {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+}
