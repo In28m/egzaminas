@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SiYourtraveldottv } from 'react-icons/si';
 import { FaCheckDouble, FaArrowRightLong } from 'react-icons/fa6';
 import { TiSocialFacebook, TiSocialLinkedin, TiSocialTwitter, TiSocialInstagram   } from 'react-icons/ti';
-
-
 import './home.scss';
 
 const Home = () => {
@@ -16,6 +13,8 @@ const Home = () => {
           <h1><SiYourtraveldottv />Travel</h1>
         </Link>
       </div>
+
+      {/*Vieta filtravimui*/}
 
       <div className="btnDiv">
         <button className='btn'>
@@ -37,4 +36,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Home

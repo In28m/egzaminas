@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './style.scss'
+import './Components/CheckIn/checkIn.scss'
 import Home from './Components/Home/Home'
 import GetStart from './Components/GetStart/GetStart';
 import CheckIn from './Components/CheckIn/CheckIn'

@@ -1,0 +1,44 @@
+.flex-container {
+    width: 40%;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(73, 72, 72, 0.192);
+    box-shadow: 0 0 10px #5990dc;
+    h2 {
+        padding-top: 25px;
+        color: var(--btnHoverColor);
+    }
+     input {
+        border: none;
+        text-align: center;
+        border-radius: 3px;
+        margin-left: 10px;
+        outline: none;
+        background-color: rgba(73, 72, 72, 0.192);
+        color: var(--blackColor); 
+        &::placeholder {
+            text-align: center;
+            color: var(--whiteColor);
+        } 
+     }
+  }
+  
+  .flex-container div {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+ 
+  
+  .flex-container button {
+    margin-left: 10px; // Arba kito dydžio pagal jūsų poreikius
+  }
+  
