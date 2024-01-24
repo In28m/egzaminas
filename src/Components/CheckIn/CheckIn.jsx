@@ -108,9 +108,11 @@ const CheckInForm = () => {
       </ul>
 
       <button className='btn'>
-          <Link to="/submit">Submit<IoCheckmarkDoneOutline  className='icon' /></Link>  
-        </button>
-    </div>
+        <Link to={{ pathname: "/submit", state: { entries } }}>
+        Submit<IoCheckmarkDoneOutline className='icon' />
+        </Link>  
+      </button>
+  </div>
   )
 }
 

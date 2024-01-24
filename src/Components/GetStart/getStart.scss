@@ -1,0 +1,46 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /*-image: url(/map.jpg);*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-top: 20px;
+  }
+  
+.item-container,
+.price-slider {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;        
+}
+.item-label,
+.price {
+    color: var(--btnHoverColor);
+    font-weight: bold;
+    margin-right: 10px;
+    font-family: sans-serif;
+}
+
+.category {
+    background-color: var(--inputColor);
+    color: var(--blackColor);
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+
+
+
+
+  
+  
+  
+  
