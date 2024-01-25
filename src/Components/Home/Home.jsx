@@ -14,8 +14,6 @@ const Home = () => {
         </Link>
       </div>
 
-      {/*Vieta filtravimui*/}
-
       <div className="btnDiv">
         <button className='btn'>
           <Link to="/check-in">Check in <FaCheckDouble className='icon' /></Link>  
