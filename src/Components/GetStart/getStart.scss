@@ -82,7 +82,17 @@
     font-size: 14px;
 }
 
-  
+@media only screen and (max-width: 768px) {
+    .cards-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+}
   
 
   

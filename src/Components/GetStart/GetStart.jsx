@@ -50,7 +50,6 @@ const GetStart = () => {
           </select>
       </div>
 
-      {/* Išfiltruota */}
       <div className="cards-container">
         {filteredPlaces.map(place => (
           <div key={place.id} className="card">

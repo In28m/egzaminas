@@ -12,6 +12,11 @@ const Home = () => {
         <Link to="/" className='logo'>
           <h1><SiYourtraveldottv />Travel</h1>
         </Link>
+
+        <nav>
+          <Link to="/about">ABOUT</Link>
+          <Link to="/contact">CONTACT</Link>
+        </nav>
       </div>
 
       <div className="btnContainer">
