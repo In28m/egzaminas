@@ -1,38 +1,79 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /*-image: url(/map.jpg);*/
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    padding-top: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: aqua;
   }
   
-.item-container,
-.price-slider {
-    display: flex;
-    align-items: center;
-    padding-left: 30px;        
-}
-.item-label,
-.price {
-    color: var(--btnHoverColor);
+  .item-container {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+  }
+  
+  .item-label {
+    font-size: 18px;
     font-weight: bold;
-    margin-right: 10px;
-    font-family: sans-serif;
-}
-
-.category {
-    background-color: var(--inputColor);
-    color: var(--blackColor);
-    text-align: center;
-    border: none;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .category {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
-}
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 350px; /* Padidintas plotis */
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 250px; /* Padidintas aukštis */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    
+  }
+  
+  
+  .card-content {
+    padding: 10px;
+  }
+  
+  .card-location {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-price {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .card-description {
+    font-size: 14px;
+  }
+
+  
+  
+
+  
 
 
 

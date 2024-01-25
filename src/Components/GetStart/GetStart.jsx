@@ -1,83 +1,76 @@
 import React, { useState, useEffect } from 'react';
 
 const GetStart = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Travel');
-  const [minPrice, setMinPrice] = useState(2500);
-  const [maxPrice, setMaxPrice] = useState(8500);
-  const [sliderValue, setSliderValue] = useState(2500);
+  const [selectedCategory, setSelectedCategory] = useState('location');
+  const [allPlaces, setAllPlaces] = useState([]);
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
 
   const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
+    const category = e.target.value;
+    setSelectedCategory(category);
+    filterPlacesByCategory(category);
   };
 
-  const handleMinPriceChange = (e) => {
-    setMinPrice(Number(e.target.value));
+  const filterPlacesByCategory = (category) => {
+    const filteredData = allPlaces.filter(place => place.location === category);
+    setFilteredPlaces(filteredData);
   };
 
-  const handleMaxPriceChange = (e) => {
-    setMaxPrice(Number(e.target.value));
-  };
-
-  const handleSliderChange = (e) => {
-    const newValue = Number(e.target.value);
-    if (newValue >= minPrice && newValue <= maxPrice) {
-      setSliderValue(newValue);
+  const fetchPlaces = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/places');
+      console.log('HTTP Response:', response);
+      const data = await response.json();
+      setAllPlaces(data);
+      setFilteredPlaces(data);
+    } catch (error) {
+      console.error(error);
     }
   };
+  
+  useEffect(() => {
+    fetchPlaces();
+  }, []);
 
   useEffect(() => {
     console.log('Selected Category:', selectedCategory);
   }, [selectedCategory]);
 
-  useEffect(() => {
-    console.log('Min Price:', minPrice);
-    console.log('Max Price:', maxPrice);
-  }, [minPrice, maxPrice]);
-
-  useEffect(() => {
-    console.log('Slider Value:', sliderValue);
-  }, [sliderValue]);
-
   return (
     <div className="main">
-      <h1>✧*｡٩(ˊᗜˋ*)و✧*｡</h1>
       <div className="item-container">
         <span className="item-label">Your Travel</span>
-          <select className='category' value={selectedCategory} onChange={handleCategoryChange}>
-            <option value="location">location:</option>
-            <option value="Dubai">Dubai</option>
-            <option value="Maldives">Maldives</option>
-            <option value="Bali">Bali</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Fiji">Fiji</option>
-            <option value="Costa Rica">Costa Rica</option>
-            <option value="Kenya">Kenya</option>
-            <option value="Seychelles">Seychelles</option>
-            <option value="Norway">Norway</option>
-            <option value="Mexico">Mexico</option>
-            <option value="Germany">Germany</option> 
-          </select>
+        <select className='category' value={selectedCategory} onChange={handleCategoryChange}>
+          <option value="location">location:</option>
+          {allPlaces.map(place => (
+            <option key={place.id} value={place.location}>{place.location}</option>
+          ))}
+        </select>
+      </div>
 
-        <div className="slider-container">
-          <div className="price-slider">
-            <span className='price'>Price: ${sliderValue}</span>
-              <input
-                type="range"
-                className="price-range"
-                min={minPrice}
-                max={maxPrice}
-                value={sliderValue}
-                step="1"
-                onChange={handleSliderChange}
-              />  
+      {/* Išfiltruota */}
+      <div className="cards-container">
+        {filteredPlaces.map(place => (
+          <div key={place.id} className="card">
+            <img src={place.img} alt={`Image for ${place.location}`} className="card-image" />
+            <div className="card-content">
+              <p className="card-location">Location: {place.location}</p>
+              <p className="card-price">Price: {place.price}</p>
+              <p className="card-description">Description: {place.description}</p>
+            </div>
           </div>
-        </div>
-      </div>    
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default GetStart
+export default GetStart;
+
+
+
+
+
 
 
 
